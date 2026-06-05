@@ -15,6 +15,10 @@ load_dotenv()
 
 
 def add_to_vector_store(vector_store, documents:List[Document]):
+    """
+    adds docs to the given vectore store
+    uses hashed to prevent adding duplicate documents
+    """
     ids=[]
     for doc in documents:
         source=doc.metadata.get("source","unkown")
